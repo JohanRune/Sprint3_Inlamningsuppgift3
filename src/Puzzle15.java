@@ -97,7 +97,7 @@ public class Puzzle15 {
         List<String> randomBrickArray = puzzle.randomBricks();
 
         for (int i = 0; i < randomBrickArray.size(); i++) {
-            System.out.print(i + " " + randomBrickArray.get(i) + " ");
+            System.out.print(randomBrickArray.get(i) + " ");
         }
         System.out.println();
 
