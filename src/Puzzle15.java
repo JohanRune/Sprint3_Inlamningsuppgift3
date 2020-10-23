@@ -93,6 +93,7 @@ public class Puzzle15 {
 
     public static void main(String[] args) {
 
+
         Puzzle15 puzzle = new Puzzle15();
         List<String> randomBrickArray = puzzle.randomBricks();
 
