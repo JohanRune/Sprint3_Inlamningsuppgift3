@@ -3,6 +3,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 import java.util.Scanner;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
@@ -19,24 +20,27 @@ import javax.swing.JTextField;
  * Project: IntelliJ IDEA
  * Copyright: MIT
  */
-public class GUI extends JFrame  {
+public class GUI extends JFrame implements ActionListener {
+    Puzzle15 puzzle = new Puzzle15();
 
-    JButton i0 = new JButton("1");
-    JButton i1 = new JButton("");
-    JButton i2 = new JButton("");
-    JButton i3 = new JButton("4");
-    JButton i4 = new JButton("5");
-    JButton i5 = new JButton("");
-    JButton i6 = new JButton("");
-    JButton i7 = new JButton("8");
-    JButton i8 = new JButton("9");
-    JButton i9 = new JButton("");
-    JButton i10 = new JButton("");
-    JButton i11 = new JButton("12");
-    JButton i12 = new JButton("13");
-    JButton i13 = new JButton("");
-    JButton i14 = new JButton("");
-    JButton i15 = new JButton("16");
+    List<String> randomBricks = puzzle.randomBricks();
+
+    JButton i0 = new JButton(randomBricks.get(0));
+    JButton i1 = new JButton(randomBricks.get(1));
+    JButton i2 = new JButton(randomBricks.get(2));
+    JButton i3 = new JButton(randomBricks.get(3));
+    JButton i4 = new JButton(randomBricks.get(4));
+    JButton i5 = new JButton(randomBricks.get(5));
+    JButton i6 = new JButton(randomBricks.get(6));
+    JButton i7 = new JButton(randomBricks.get(7));
+    JButton i8 = new JButton(randomBricks.get(8));
+    JButton i9 = new JButton(randomBricks.get(9));
+    JButton i10 = new JButton(randomBricks.get(10));
+    JButton i11 = new JButton(randomBricks.get(11));
+    JButton i12 = new JButton(randomBricks.get(12));
+    JButton i13 = new JButton(randomBricks.get(13));
+    JButton i14 = new JButton(randomBricks.get(14));
+    JButton i15 = new JButton(randomBricks.get(15));
 
     JPanel victoryMessage = new JPanel();
     JPanel bricks = new JPanel();
@@ -53,6 +57,8 @@ public class GUI extends JFrame  {
         add("South", shuffleMessage);
 
         bricks.setLayout(new GridLayout(4, 4));
+
+        i5.addActionListener(this);
 
         bricks.add(i0);
         bricks.add(i1);
@@ -75,6 +81,15 @@ public class GUI extends JFrame  {
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
+
+    //lyssnare
+    @Override
+    public void actionPerformed (ActionEvent e) {
+
+        i5.setText("hej");
+
+    }
+
 
 
     public static void main(String[] args) {

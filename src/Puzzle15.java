@@ -4,13 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-/**
- * Created by Hodei Eceiza
- * Date: 10/22/2020
- * Time: 09:33
- * Project: puzzle15
- * Copyright: MIT
- */
+
 public class Puzzle15 {
 
 
@@ -32,8 +26,19 @@ public class Puzzle15 {
             if (check == false)
                 randomBricks.add(String.valueOf(randomNum));
         }
+
+        int indexOfZero = randomBricks.indexOf("0");
+        randomBricks.set(indexOfZero, "");
+
         return randomBricks;
     }
+
+
+    public String oneRandomBrick (int j){
+        List<String> randomBricks = randomBricks();
+        return randomBricks.get(j);
+    }
+
 
 
 
@@ -94,11 +99,11 @@ public class Puzzle15 {
     public static void main(String[] args) {
 
         Puzzle15 puzzle = new Puzzle15();
-        List<String> randomBrickArray = puzzle.randomBricks();
+        //List<String> randomBrickArray = puzzle.randomBricks();
 
-        for (int i = 0; i < randomBrickArray.size(); i++) {
-            System.out.print(randomBrickArray.get(i) + " ");
-        }
+        //for (int i = 0; i < randomBrickArray.size(); i++) {
+        //    System.out.print(randomBrickArray.get(i) + " ");
+        //}
         System.out.println();
 
         List<String> testArray = new ArrayList<>();
