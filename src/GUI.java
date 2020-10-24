@@ -29,12 +29,28 @@ public class GUI extends JFrame implements ActionListener {
 
     List<String> randomBricks = puzzle.randomBricks();
 
-
-
-
-
-
     List<String> closeToVictoryList = new ArrayList<>();
+
+/*
+    JButton i0 = new JButton();
+    JButton i1 = new JButton();
+    JButton i2 = new JButton();
+    JButton i3 = new JButton();
+    JButton i4 = new JButton();
+    JButton i5 = new JButton();
+    JButton i6 = new JButton();
+    JButton i7 = new JButton();
+    JButton i8 = new JButton();
+    JButton i9 = new JButton();
+    JButton i10 = new JButton();
+    JButton i11 = new JButton();
+    JButton i12 = new JButton();
+    JButton i13 = new JButton();
+    JButton i14 = new JButton();
+    JButton i15 = new JButton();
+    JButton newGame = new JButton("Nytt spel!");
+*/
+
 
 
     JButton i0 = new JButton(randomBricks.get(0));
@@ -55,14 +71,13 @@ public class GUI extends JFrame implements ActionListener {
     JButton i15 = new JButton(randomBricks.get(15));
     JButton newGame = new JButton("Nytt spel!");
 
+
     JPanel victoryMessage = new JPanel();
     JPanel bricks = new JPanel();
     JPanel shuffleMessage = new JPanel();
     JPanel bricksNorth = new JPanel();
     JPanel bricksCenter = new JPanel();
     JPanel bricksSouth = new JPanel();
-
-
 
 
     public void GUI (boolean test) {
@@ -284,7 +299,7 @@ public class GUI extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         GUI g = new GUI();
-        g.GUI(false); //skriv true om det ska vara en kvar till seger.
+        g.GUI(true); //skriv true om det ska vara en kvar till seger.
 
         //List<String> oneMoveToVictoryArray = oneMoveToVictory()
     }

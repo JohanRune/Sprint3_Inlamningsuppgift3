@@ -11,7 +11,9 @@ public class Puzzle15 {
 
     //metod som slumpar ut brickorna.
     public List<String> randomBricks () {
+
         List<String> randomBricks = new ArrayList<>();
+        List<String> closeToVictoryBricks = new ArrayList<>();
         int randomNum;
         randomNum = ThreadLocalRandom.current().nextInt(0, 16);
         randomBricks.add(String.valueOf(randomNum));
@@ -30,18 +32,46 @@ public class Puzzle15 {
 
         int indexOfZero = randomBricks.indexOf("0");
         randomBricks.set(indexOfZero, "");
+/*
+        closeToVictoryBricks = closeToVictory();
 
-        return randomBricks;
+        if (test == true)
+            return closeToVictoryBricks;
+        else
+
+ */
+            return randomBricks;
     }
 
-
+/*
     public String oneRandomBrick (int j){
         List<String> randomBricks = randomBricks();
         return randomBricks.get(j);
     }
+*/
 
+    public List<String> closeToVictory(){
+        List<String> closeToVictoryList = new ArrayList<>();
 
+        closeToVictoryList.add("1");
+        closeToVictoryList.add("2");
+        closeToVictoryList.add("3");
+        closeToVictoryList.add("4");
+        closeToVictoryList.add("5");
+        closeToVictoryList.add("6");
+        closeToVictoryList.add("7");
+        closeToVictoryList.add("8");
+        closeToVictoryList.add("9");
+        closeToVictoryList.add("10");
+        closeToVictoryList.add("11");
+        closeToVictoryList.add("12");
+        closeToVictoryList.add("13");
+        closeToVictoryList.add("14");
+        closeToVictoryList.add("");
+        closeToVictoryList.add("15");
 
+        return closeToVictoryList;
+    }
 
     //metod som byter plats på vald bricka och tomma platsen.
     //inparameter: en plats i arrayen där en bricka finns placerad.
