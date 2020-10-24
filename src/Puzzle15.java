@@ -15,7 +15,7 @@ public class Puzzle15 {
 
 
     //metod som slumpar ut brickorna.
-    public List<String> randomBricks28 () {
+    public List<String> randomBricks38 () {
         List<String> randomBricks = new ArrayList<>();
         int randomNum;
         randomNum = ThreadLocalRandom.current().nextInt(0, 16);
