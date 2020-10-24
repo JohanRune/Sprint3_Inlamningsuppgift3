@@ -15,7 +15,7 @@ public class Puzzle15 {
 
 
     //metod som slumpar ut brickorna.
-    public List<String> randomBricks8 () {
+    public List<String> randomBricks18 () {
         List<String> randomBricks = new ArrayList<>();
         int randomNum;
         randomNum = ThreadLocalRandom.current().nextInt(0, 16);
@@ -39,7 +39,7 @@ public class Puzzle15 {
 
     //metod som byter plats på vald bricka och tomma platsen.
     //inparameter: en plats i arrayen där en bricka finns placerad.
-    public List<String> changePlace3 (List<String> brickArray, int indexOfChoosenBrick){
+    public List<String> changePlace23 (List<String> brickArray, int indexOfChoosenBrick){
 
         //hitta index av X.
         int indexOfX = 0;
