@@ -50,8 +50,8 @@ public class Puzzle15 {
 
 
         //om godkänd plats så byter den plats.
-        if (indexOfChoosenBrick == indexOfX - 1 || indexOfChoosenBrick == indexOfX + 1
-                || indexOfChoosenBrick == indexOfX - 4 || indexOfChoosenBrick == indexOfX + 4) {
+        if (indexOfChoosenBrick == indexOfX - 2 || indexOfChoosenBrick == indexOfX + 1
+                || indexOfChoosenBrick == indexOfX - 5 || indexOfChoosenBrick == indexOfX + 4) {
             brickArray.set(indexOfX, brickArray.get(indexOfChoosenBrick));
             brickArray.set(indexOfChoosenBrick, "X");
         }
@@ -85,10 +85,6 @@ public class Puzzle15 {
         else
             return false;
     }
-
-
-
-
 
 
     public static void main(String[] args) {
