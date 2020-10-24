@@ -178,7 +178,6 @@ public class GUI extends JFrame implements ActionListener {
     @Override
     public void actionPerformed (ActionEvent e) {
 
-
         if(e.getSource() == i0) {
             placedBricks = puzzle.changePlace(placedBricks, 0);
             setBricks(placedBricks);
@@ -280,20 +279,12 @@ public class GUI extends JFrame implements ActionListener {
         if (puzzle.isVictory(bricks))
             victoryText.setText("Vinst! Grattis!");
     }
-/*
-    public void oneMoveToVictory(){
-        List<String> oneMoveToVictoryArray = new ArrayList<>();
 
-        setBricks(oneMoveToVictoryArray);
-
-    }
-*/
 
     public static void main(String[] args) {
         GUI g = new GUI();
-        g.GUI(false); //skriv true om det ska vara en kvar till seger.
+        g.GUI(true); //skriv true om det ska vara en kvar till seger.
 
-        //List<String> oneMoveToVictoryArray = oneMoveToVictory()
     }
 
 }
