@@ -106,13 +106,10 @@ public class GUI extends JFrame implements ActionListener {
     //lyssnare
     @Override
     public void actionPerformed (ActionEvent e) {
-        //om "nytt spel" knapp tryckt, skapa nytt objekt av gui och sätt igång det.
-        //nedan: chansa på att man inte behöver ha loop, utan att den fortsätter lyssna av sig själv. testa.
-        //i5.setText(puzzle.changePlace(randomBricks, 5).get(5));
+
         List<String> placedBricks = randomBricks;
-        System.out.println("hejsan");
+
         if(e.getSource() == i0) {
-            System.out.println("hej");
             placedBricks = puzzle.changePlace(placedBricks, 0);
             setBricks(placedBricks);
         }
@@ -187,31 +184,7 @@ public class GUI extends JFrame implements ActionListener {
             placedBricks = puzzle.randomBricks();
             setBricks(placedBricks);
         }
-
-
-            /*
-            i0.setText(placedBricks.get(0));
-
-
-            int indexOfSpace = placedBricks.indexOf("");
-            String index = "i" + indexOfSpace;
-
-
-            if (change place is ok)
-                placedBricks = puzzle.changePlace.
-                i0.setText("");
-            JButton placeOfSpace = placedBricks.indexOf("0");
-            placeOfSpace.setText(temp)
-            //hur hitta vilken bricka som har _?
-            puzzle.find_(); ger 8
-                i8.setText(temp);
-            placedBricks = puzzle.changePlace(0)
-                    list = new changes to the list.
-
-            räknare. om räknaren är 1 eller högre så är det inte längre random bricks
-                    utan placed bricks som ska användas.
-            */
-        }
+    }
 
 
     public void setBricks (List<String> bricks){
@@ -235,11 +208,19 @@ public class GUI extends JFrame implements ActionListener {
 
     }
 
+    public void oneMoveToVictory(){
+        List<String> oneMoveToVictoryArray = new ArrayList<>();
+
+        setBricks(oneMoveToVictoryArray);
+
+    }
+
 
     public static void main(String[] args) {
         GUI g = new GUI();
         g.GUI();
-        Button b = new Button();
+
+        List<String> oneMoveToVictoryArray = oneMoveToVictory()
     }
 
 }
