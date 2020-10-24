@@ -31,6 +31,9 @@ public class GUI extends JFrame implements ActionListener {
 
     List<String> closeToVictoryList = new ArrayList<>();
 
+    List<String> placedBricks = new ArrayList<>();
+
+
 /*
     JButton i0 = new JButton();
     JButton i1 = new JButton();
@@ -49,7 +52,10 @@ public class GUI extends JFrame implements ActionListener {
     JButton i14 = new JButton();
     JButton i15 = new JButton();
     JButton newGame = new JButton("Nytt spel!");
-*/
+    JLabel victoryText = new JLabel("");
+
+ */
+
 
 
 
@@ -70,6 +76,7 @@ public class GUI extends JFrame implements ActionListener {
     JButton i14 = new JButton(randomBricks.get(14));
     JButton i15 = new JButton(randomBricks.get(15));
     JButton newGame = new JButton("Nytt spel!");
+    JLabel victoryText = new JLabel("");
 
 
     JPanel victoryMessage = new JPanel();
@@ -82,13 +89,17 @@ public class GUI extends JFrame implements ActionListener {
 
     public void GUI (boolean test) {
 
-        if (test == true) {
-            isTest = true;
+        if (isTest == false)
+            placedBricks = randomBricks;
 
-        System.out.println("true? " + test);
-        System.out.println("isTrue " + isTest);
+        if (test == true)
+        {
 
-           // List<String> closeToVictoryList = new ArrayList<>();
+
+
+            System.out.println("true? " + test);
+            System.out.println("isTrue " + isTest);
+
             closeToVictoryList.add("1");
             closeToVictoryList.add("2");
             closeToVictoryList.add("3");
@@ -106,29 +117,10 @@ public class GUI extends JFrame implements ActionListener {
             closeToVictoryList.add("");
             closeToVictoryList.add("15");
 
-            randomBricks = closeToVictoryList;
+            placedBricks = closeToVictoryList;
+
+           // randomBricks = closeToVictoryList;
         }
-
-
-         /*
-            i0.setText("1");
-            i1.setText("2");
-            i2.setText("3");
-            i3.setText("4");
-            i4.setText("5");
-            i5.setText("6");
-            i6.setText("7");
-            i7.setText("8");
-            i8.setText("9");
-            i9.setText("10");
-            i10.setText("11");
-            i11.setText("12");
-            i12.setText("13");
-            i13.setText("14");
-            i14.setText("");
-            i15.setText("15");
-
-        }*/
 
         setLayout(new BorderLayout());
         add("North", victoryMessage);
@@ -173,21 +165,18 @@ public class GUI extends JFrame implements ActionListener {
         bricks.add(i14);
         bricks.add(i15);
         shuffleMessage.add(newGame);
+        victoryMessage.add(victoryText);
 
         pack();
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
+
+
     //lyssnare
     @Override
     public void actionPerformed (ActionEvent e) {
-        List<String> placedBricks;
-
-        if (isTest == false)
-            placedBricks = randomBricks;
-        else
-            placedBricks = closeToVictoryList;
 
 
         if(e.getSource() == i0) {
@@ -261,9 +250,11 @@ public class GUI extends JFrame implements ActionListener {
             setBricks(placedBricks);
         }
 
+
         if(e.getSource() == newGame){
             placedBricks = puzzle.randomBricks();
             setBricks(placedBricks);
+            victoryText.setText("");
         }
     }
 
@@ -286,20 +277,21 @@ public class GUI extends JFrame implements ActionListener {
         i14.setText(bricks.get(14));
         i15.setText(bricks.get(15));
 
-
+        if (puzzle.isVictory(bricks))
+            victoryText.setText("Vinst! Grattis!");
     }
-
+/*
     public void oneMoveToVictory(){
         List<String> oneMoveToVictoryArray = new ArrayList<>();
 
         setBricks(oneMoveToVictoryArray);
 
     }
-
+*/
 
     public static void main(String[] args) {
         GUI g = new GUI();
-        g.GUI(true); //skriv true om det ska vara en kvar till seger.
+        g.GUI(false); //skriv true om det ska vara en kvar till seger.
 
         //List<String> oneMoveToVictoryArray = oneMoveToVictory()
     }

@@ -111,7 +111,7 @@ public class Puzzle15 {
     //metoden kollar om pusslet har lösts.
     public boolean isVictory (List<String> brickArray){
 
-        String[] victoryLayout = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "X"};
+        String[] victoryLayout = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", ""};
 
         boolean isVicotory = false;
         int victoryCount = 0;
