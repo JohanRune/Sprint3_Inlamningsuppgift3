@@ -220,7 +220,7 @@ public class GUI extends JFrame implements ActionListener {
         GUI g = new GUI();
         g.GUI();
 
-        List<String> oneMoveToVictoryArray = oneMoveToVictory()
+        //List<String> oneMoveToVictoryArray = oneMoveToVictory()
     }
 
 }
