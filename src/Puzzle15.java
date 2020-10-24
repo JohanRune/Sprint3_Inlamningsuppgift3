@@ -7,6 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Puzzle15 {
 
+   // GUI gui = new GUI();
 
     //metod som slumpar ut brickorna.
     public List<String> randomBricks () {
@@ -49,16 +50,16 @@ public class Puzzle15 {
         //hitta index av X.
         int indexOfX = 0;
         for (int i = 0; i < brickArray.size(); i++)
-            if (brickArray.get(i).equalsIgnoreCase("X"))
+            if (brickArray.get(i).equalsIgnoreCase(""))
                 indexOfX = i;
-        System.out.println("index på X: " + indexOfX);
+        System.out.println("index på _: " + indexOfX);
 
 
         //om godkänd plats så byter den plats.
         if (indexOfChoosenBrick == indexOfX - 1 || indexOfChoosenBrick == indexOfX + 1
                 || indexOfChoosenBrick == indexOfX - 4 || indexOfChoosenBrick == indexOfX + 4) {
             brickArray.set(indexOfX, brickArray.get(indexOfChoosenBrick));
-            brickArray.set(indexOfChoosenBrick, "X");
+            brickArray.set(indexOfChoosenBrick, "");
         }
 
         //test
@@ -68,9 +69,14 @@ public class Puzzle15 {
         }
         System.out.println();
 
+        //gui.i0.setText("hej");
+
         return brickArray;
 
     }
+
+
+
 
     //metoden kollar om pusslet har lösts.
     public boolean isVictory (List<String> brickArray){
