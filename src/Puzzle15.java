@@ -43,12 +43,6 @@ public class Puzzle15 {
             return randomBricks;
     }
 
-/*
-    public String oneRandomBrick (int j){
-        List<String> randomBricks = randomBricks();
-        return randomBricks.get(j);
-    }
-*/
 
     public List<String> closeToVictory(){
         List<String> closeToVictoryList = new ArrayList<>();
@@ -98,8 +92,6 @@ public class Puzzle15 {
             System.out.print(brickArray.get(i) + " ");
         }
         System.out.println();
-
-        //gui.i0.setText("hej");
 
         return brickArray;
 

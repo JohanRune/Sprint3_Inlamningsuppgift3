@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
-
 /**
  * Created by Johan Rune
  * Date: 2020-10-23
@@ -24,40 +23,10 @@ import javax.swing.JTextField;
 public class GUI extends JFrame implements ActionListener {
 
     Puzzle15 puzzle = new Puzzle15();
-
     boolean isTest = false;
-
     List<String> randomBricks = puzzle.randomBricks();
-
     List<String> closeToVictoryList = new ArrayList<>();
-
     List<String> placedBricks = new ArrayList<>();
-
-
-/*
-    JButton i0 = new JButton();
-    JButton i1 = new JButton();
-    JButton i2 = new JButton();
-    JButton i3 = new JButton();
-    JButton i4 = new JButton();
-    JButton i5 = new JButton();
-    JButton i6 = new JButton();
-    JButton i7 = new JButton();
-    JButton i8 = new JButton();
-    JButton i9 = new JButton();
-    JButton i10 = new JButton();
-    JButton i11 = new JButton();
-    JButton i12 = new JButton();
-    JButton i13 = new JButton();
-    JButton i14 = new JButton();
-    JButton i15 = new JButton();
-    JButton newGame = new JButton("Nytt spel!");
-    JLabel victoryText = new JLabel("");
-
- */
-
-
-
 
     JButton i0 = new JButton(randomBricks.get(0));
     JButton i1 = new JButton(randomBricks.get(1));
@@ -78,7 +47,6 @@ public class GUI extends JFrame implements ActionListener {
     JButton newGame = new JButton("Nytt spel!");
     JLabel victoryText = new JLabel("");
 
-
     JPanel victoryMessage = new JPanel();
     JPanel bricks = new JPanel();
     JPanel shuffleMessage = new JPanel();
@@ -89,16 +57,9 @@ public class GUI extends JFrame implements ActionListener {
 
     public void GUI (boolean test) {
 
-        if (isTest == false)
-            placedBricks = randomBricks;
-
         if (test == true)
         {
-
-
-
-            System.out.println("true? " + test);
-            System.out.println("isTrue " + isTest);
+            isTest = true;
 
             closeToVictoryList.add("1");
             closeToVictoryList.add("2");
@@ -118,9 +79,10 @@ public class GUI extends JFrame implements ActionListener {
             closeToVictoryList.add("15");
 
             placedBricks = closeToVictoryList;
-
-           // randomBricks = closeToVictoryList;
         }
+
+        if (isTest == false)
+            placedBricks = randomBricks;
 
         setLayout(new BorderLayout());
         add("North", victoryMessage);
@@ -171,7 +133,6 @@ public class GUI extends JFrame implements ActionListener {
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-
 
 
     //lyssnare
@@ -257,7 +218,6 @@ public class GUI extends JFrame implements ActionListener {
         }
     }
 
-
     public void setBricks (List<String> bricks){
         i0.setText(bricks.get(0));
         i1.setText(bricks.get(1));
@@ -279,12 +239,4 @@ public class GUI extends JFrame implements ActionListener {
         if (puzzle.isVictory(bricks))
             victoryText.setText("Vinst! Grattis!");
     }
-
-
-    public static void main(String[] args) {
-        GUI g = new GUI();
-        g.GUI(true); //skriv true om det ska vara en kvar till seger.
-
-    }
-
 }
