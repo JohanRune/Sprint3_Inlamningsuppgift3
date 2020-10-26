@@ -25,7 +25,39 @@ public class GUI extends JFrame implements ActionListener {
 
     Puzzle15 puzzle = new Puzzle15();
 
+    boolean isTest = false;
+
     List<String> randomBricks = puzzle.randomBricks();
+
+    List<String> closeToVictoryList = new ArrayList<>();
+
+    List<String> placedBricks = new ArrayList<>();
+
+
+/*
+    JButton i0 = new JButton();
+    JButton i1 = new JButton();
+    JButton i2 = new JButton();
+    JButton i3 = new JButton();
+    JButton i4 = new JButton();
+    JButton i5 = new JButton();
+    JButton i6 = new JButton();
+    JButton i7 = new JButton();
+    JButton i8 = new JButton();
+    JButton i9 = new JButton();
+    JButton i10 = new JButton();
+    JButton i11 = new JButton();
+    JButton i12 = new JButton();
+    JButton i13 = new JButton();
+    JButton i14 = new JButton();
+    JButton i15 = new JButton();
+    JButton newGame = new JButton("Nytt spel!");
+    JLabel victoryText = new JLabel("");
+
+ */
+
+
+
 
     JButton i0 = new JButton(randomBricks.get(0));
     JButton i1 = new JButton(randomBricks.get(1));
@@ -44,6 +76,8 @@ public class GUI extends JFrame implements ActionListener {
     JButton i14 = new JButton(randomBricks.get(14));
     JButton i15 = new JButton(randomBricks.get(15));
     JButton newGame = new JButton("Nytt spel!");
+    JLabel victoryText = new JLabel("");
+
 
     JPanel victoryMessage = new JPanel();
     JPanel bricks = new JPanel();
@@ -52,7 +86,41 @@ public class GUI extends JFrame implements ActionListener {
     JPanel bricksCenter = new JPanel();
     JPanel bricksSouth = new JPanel();
 
-    public void GUI () {
+
+    public void GUI (boolean test) {
+
+        if (isTest == false)
+            placedBricks = randomBricks;
+
+        if (test == true)
+        {
+
+
+
+            System.out.println("true? " + test);
+            System.out.println("isTrue " + isTest);
+
+            closeToVictoryList.add("1");
+            closeToVictoryList.add("2");
+            closeToVictoryList.add("3");
+            closeToVictoryList.add("4");
+            closeToVictoryList.add("5");
+            closeToVictoryList.add("6");
+            closeToVictoryList.add("7");
+            closeToVictoryList.add("8");
+            closeToVictoryList.add("9");
+            closeToVictoryList.add("10");
+            closeToVictoryList.add("11");
+            closeToVictoryList.add("12");
+            closeToVictoryList.add("13");
+            closeToVictoryList.add("14");
+            closeToVictoryList.add("");
+            closeToVictoryList.add("15");
+
+            placedBricks = closeToVictoryList;
+
+           // randomBricks = closeToVictoryList;
+        }
 
         setLayout(new BorderLayout());
         add("North", victoryMessage);
@@ -97,17 +165,18 @@ public class GUI extends JFrame implements ActionListener {
         bricks.add(i14);
         bricks.add(i15);
         shuffleMessage.add(newGame);
+        victoryMessage.add(victoryText);
 
         pack();
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
+
+
     //lyssnare
     @Override
     public void actionPerformed (ActionEvent e) {
-
-        List<String> placedBricks = randomBricks;
 
         if(e.getSource() == i0) {
             placedBricks = puzzle.changePlace(placedBricks, 0);
@@ -180,9 +249,11 @@ public class GUI extends JFrame implements ActionListener {
             setBricks(placedBricks);
         }
 
+
         if(e.getSource() == newGame){
             placedBricks = puzzle.randomBricks();
             setBricks(placedBricks);
+            victoryText.setText("");
         }
     }
 
@@ -205,22 +276,15 @@ public class GUI extends JFrame implements ActionListener {
         i14.setText(bricks.get(14));
         i15.setText(bricks.get(15));
 
-
-    }
-
-    public void oneMoveToVictory(){
-        List<String> oneMoveToVictoryArray = new ArrayList<>();
-
-        setBricks(oneMoveToVictoryArray);
-
+        if (puzzle.isVictory(bricks))
+            victoryText.setText("Vinst! Grattis!");
     }
 
 
     public static void main(String[] args) {
         GUI g = new GUI();
-        g.GUI();
+        g.GUI(true); //skriv true om det ska vara en kvar till seger.
 
-        //List<String> oneMoveToVictoryArray = oneMoveToVictory()
     }
 
 }
