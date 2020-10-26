@@ -28,31 +28,7 @@ public class Puzzle15 {
         int indexOfZero = randomBricks.indexOf("0");
         randomBricks.set(indexOfZero, "");
 
-            return randomBricks;
-    }
-
-
-    public List<String> closeToVictory(){
-        List<String> closeToVictoryList = new ArrayList<>();
-
-        closeToVictoryList.add("1");
-        closeToVictoryList.add("2");
-        closeToVictoryList.add("3");
-        closeToVictoryList.add("4");
-        closeToVictoryList.add("5");
-        closeToVictoryList.add("6");
-        closeToVictoryList.add("7");
-        closeToVictoryList.add("8");
-        closeToVictoryList.add("9");
-        closeToVictoryList.add("10");
-        closeToVictoryList.add("11");
-        closeToVictoryList.add("12");
-        closeToVictoryList.add("13");
-        closeToVictoryList.add("14");
-        closeToVictoryList.add("");
-        closeToVictoryList.add("15");
-
-        return closeToVictoryList;
+        return randomBricks;
     }
 
 
@@ -62,7 +38,6 @@ public class Puzzle15 {
         for (int i = 0; i < brickArray.size(); i++)
             if (brickArray.get(i).equalsIgnoreCase(""))
                 indexOfSpace = i;
-        System.out.println("index på _: " + indexOfSpace);
 
         if (indexOfChoosenBrick == indexOfSpace - 1 || indexOfChoosenBrick == indexOfSpace + 1
                 || indexOfChoosenBrick == indexOfSpace - 4 || indexOfChoosenBrick == indexOfSpace + 4) {

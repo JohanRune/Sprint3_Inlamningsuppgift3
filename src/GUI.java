@@ -5,12 +5,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import javax.swing.JFrame;
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.*;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 
 /**
@@ -44,15 +41,12 @@ public class GUI extends JFrame implements ActionListener {
     JButton i13 = new JButton(randomBricks.get(13));
     JButton i14 = new JButton(randomBricks.get(14));
     JButton i15 = new JButton(randomBricks.get(15));
-    JButton newGame = new JButton("Nytt spel!");
+    JButton newGame = new JButton("New Game!");
     JLabel victoryText = new JLabel("");
 
     JPanel victoryMessage = new JPanel();
     JPanel bricks = new JPanel();
     JPanel shuffleMessage = new JPanel();
-    JPanel bricksNorth = new JPanel();
-    JPanel bricksCenter = new JPanel();
-    JPanel bricksSouth = new JPanel();
 
 
     public void GUI (boolean test) {
@@ -179,37 +173,30 @@ public class GUI extends JFrame implements ActionListener {
             placedBricks = puzzle.changePlace(placedBricks, 9);
             setBricks(placedBricks);
         }
-
         if(e.getSource() == i10) {
             placedBricks = puzzle.changePlace(placedBricks, 10);
             setBricks(placedBricks);
         }
-
         if(e.getSource() == i11) {
             placedBricks = puzzle.changePlace(placedBricks, 11);
             setBricks(placedBricks);
         }
-
         if(e.getSource() == i12) {
             placedBricks = puzzle.changePlace(placedBricks, 12);
             setBricks(placedBricks);
         }
-
         if(e.getSource() == i13) {
             placedBricks = puzzle.changePlace(placedBricks, 13);
             setBricks(placedBricks);
         }
-
         if(e.getSource() == i14) {
             placedBricks = puzzle.changePlace(placedBricks, 14);
             setBricks(placedBricks);
         }
-
         if(e.getSource() == i15) {
             placedBricks = puzzle.changePlace(placedBricks, 15);
             setBricks(placedBricks);
         }
-
 
         if(e.getSource() == newGame){
             placedBricks = puzzle.randomBricks();
@@ -237,6 +224,6 @@ public class GUI extends JFrame implements ActionListener {
         i15.setText(bricks.get(15));
 
         if (puzzle.isVictory(bricks))
-            victoryText.setText("Vinst! Grattis!");
+            victoryText.setText("Victory Congratulations!");
     }
 }
