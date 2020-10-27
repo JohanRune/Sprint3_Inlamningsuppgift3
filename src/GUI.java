@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.*;
 import javax.swing.JPanel;
 
-
+//set visible false.
 /**
  * Created by Johan Rune
  * Date: 2020-10-23
@@ -25,6 +25,7 @@ public class GUI extends JFrame implements ActionListener {
     List<String> closeToVictoryList = new ArrayList<>();
     List<String> placedBricks = new ArrayList<>();
 
+/*
     JButton i0 = new JButton(randomBricks.get(0));
     JButton i1 = new JButton(randomBricks.get(1));
     JButton i2 = new JButton(randomBricks.get(2));
@@ -41,8 +42,34 @@ public class GUI extends JFrame implements ActionListener {
     JButton i13 = new JButton(randomBricks.get(13));
     JButton i14 = new JButton(randomBricks.get(14));
     JButton i15 = new JButton(randomBricks.get(15));
-    JButton newGame = new JButton("New Game!");
+    JButton newGame = new JButton("Play!");
     JLabel victoryText = new JLabel("");
+*/
+
+
+    JButton i0 = new JButton();
+    JButton i1 = new JButton();
+    JButton i2 = new JButton();
+    JButton i3 = new JButton();
+    JButton i4 = new JButton();
+    JButton i5 = new JButton();
+    JButton i6 = new JButton();
+    JButton i7 = new JButton();
+    JButton i8 = new JButton();
+    JButton i9 = new JButton();
+    JButton i10 = new JButton();
+    JButton i11 = new JButton();
+    JButton i12 = new JButton();
+    JButton i13 = new JButton();
+    JButton i14 = new JButton();
+    JButton i15 = new JButton();
+    JButton newGame = new JButton("Play!");
+    JLabel victoryText = new JLabel("");
+
+
+
+
+
 
     JPanel victoryMessage = new JPanel();
     JPanel bricks = new JPanel();
@@ -123,7 +150,8 @@ public class GUI extends JFrame implements ActionListener {
         shuffleMessage.add(newGame);
         victoryMessage.add(victoryText);
 
-        pack();
+//        pack();
+        setSize(300, 300);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
@@ -206,22 +234,105 @@ public class GUI extends JFrame implements ActionListener {
     }
 
     public void setBricks (List<String> bricks){
+
         i0.setText(bricks.get(0));
+        if (bricks.get(0) == "")
+            i0.setVisible(false);
+        else
+            i0.setVisible(true);
+
         i1.setText(bricks.get(1));
+        if (bricks.get(1) == "")
+            i1.setVisible(false);
+        else
+            i1.setVisible(true);
+
         i2.setText(bricks.get(2));
+        if (bricks.get(2) == "")
+            i2.setVisible(false);
+        else
+            i2.setVisible(true);
         i3.setText(bricks.get(3));
+        if (bricks.get(3) == "")
+            i3.setVisible(false);
+        else
+            i3.setVisible(true);
+
         i4.setText(bricks.get(4));
+        if (bricks.get(4) == "")
+            i4.setVisible(false);
+        else
+            i4.setVisible(true);
+
         i5.setText(bricks.get(5));
+        if (bricks.get(5) == "")
+            i5.setVisible(false);
+        else
+            i5.setVisible(true);
+
         i6.setText(bricks.get(6));
+        if (bricks.get(6) == "")
+            i6.setVisible(false);
+        else
+            i6.setVisible(true);
+
+
+
         i7.setText(bricks.get(7));
+        if (bricks.get(7) == "")
+            i7.setVisible(false);
+        else
+            i7.setVisible(true);
+
         i8.setText(bricks.get(8));
+        if (bricks.get(8) == "")
+            i8.setVisible(false);
+        else
+            i8.setVisible(true);
+
         i9.setText(bricks.get(9));
+        if (bricks.get(9) == "")
+            i9.setVisible(false);
+        else
+            i9.setVisible(true);
+
         i10.setText(bricks.get(10));
+        if (bricks.get(10) == "")
+            i10.setVisible(false);
+        else
+            i10.setVisible(true);
+
         i11.setText(bricks.get(11));
+        if (bricks.get(11) == "")
+            i11.setVisible(false);
+        else
+            i11.setVisible(true);
+
         i12.setText(bricks.get(12));
+        if (bricks.get(12) == "")
+            i12.setVisible(false);
+        else
+            i12.setVisible(true);
+
         i13.setText(bricks.get(13));
+        if (bricks.get(13) == "")
+            i13.setVisible(false);
+        else
+            i13.setVisible(true);
+
         i14.setText(bricks.get(14));
+        if (bricks.get(14) == "")
+            i14.setVisible(false);
+        else
+            i14.setVisible(true);
+
         i15.setText(bricks.get(15));
+        if (bricks.get(15) == "")
+            i15.setVisible(false);
+        else
+            i15.setVisible(true);
+
+
 
         if (puzzle.isVictory(bricks))
             victoryText.setText("Victory Congratulations!");
