@@ -25,28 +25,6 @@ public class GUI extends JFrame implements ActionListener {
     List<String> closeToVictoryList = new ArrayList<>();
     List<String> placedBricks = new ArrayList<>();
 
-/*
-    JButton i0 = new JButton(randomBricks.get(0));
-    JButton i1 = new JButton(randomBricks.get(1));
-    JButton i2 = new JButton(randomBricks.get(2));
-    JButton i3 = new JButton(randomBricks.get(3));
-    JButton i4 = new JButton(randomBricks.get(4));
-    JButton i5 = new JButton(randomBricks.get(5));
-    JButton i6 = new JButton(randomBricks.get(6));
-    JButton i7 = new JButton(randomBricks.get(7));
-    JButton i8 = new JButton(randomBricks.get(8));
-    JButton i9 = new JButton(randomBricks.get(9));
-    JButton i10 = new JButton(randomBricks.get(10));
-    JButton i11 = new JButton(randomBricks.get(11));
-    JButton i12 = new JButton(randomBricks.get(12));
-    JButton i13 = new JButton(randomBricks.get(13));
-    JButton i14 = new JButton(randomBricks.get(14));
-    JButton i15 = new JButton(randomBricks.get(15));
-    JButton newGame = new JButton("Play!");
-    JLabel victoryText = new JLabel("");
-*/
-
-
     JButton i0 = new JButton();
     JButton i1 = new JButton();
     JButton i2 = new JButton();
@@ -65,11 +43,6 @@ public class GUI extends JFrame implements ActionListener {
     JButton i15 = new JButton();
     JButton newGame = new JButton("Play!");
     JLabel victoryText = new JLabel("");
-
-
-
-
-
 
     JPanel victoryMessage = new JPanel();
     JPanel bricks = new JPanel();
@@ -150,14 +123,12 @@ public class GUI extends JFrame implements ActionListener {
         shuffleMessage.add(newGame);
         victoryMessage.add(victoryText);
 
-//        pack();
         setSize(300, 300);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
 
-    //lyssnare
     @Override
     public void actionPerformed (ActionEvent e) {
 
