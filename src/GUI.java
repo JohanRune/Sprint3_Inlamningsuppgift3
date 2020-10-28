@@ -42,6 +42,7 @@ public class GUI extends JFrame implements ActionListener {
     JButton i13 = new JButton();
     JButton i14 = new JButton();
     JButton i15 = new JButton();
+
     JButton newGame = new JButton("Play!");
     JLabel victoryText = new JLabel("");
 
