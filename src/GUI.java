@@ -132,7 +132,7 @@ public class GUI extends JFrame implements ActionListener {
                 setBricks(placedBricks);
             }
 
-        if(e.getSource() == newGame && isTest == false){
+        if (e.getSource() == newGame && isTest == false){
             placedBricks = puzzle.randomBricks();
             setBricks(placedBricks);
             victoryText.setText("");
