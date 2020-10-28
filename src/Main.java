@@ -5,6 +5,3 @@ public class Main {
         g.GUI(true); //skriv true om det ska vara en kvar till seger, annars false
     }
 }
-
-//Master3
-//Master3 igen.
