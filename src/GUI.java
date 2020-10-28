@@ -45,7 +45,6 @@ public class GUI extends JFrame implements ActionListener {
     JButton newGame = new JButton("Play!");
     JLabel victoryText = new JLabel("");
 
-
     JPanel victoryMessage = new JPanel();
     JPanel bricks = new JPanel();
     JPanel shuffleMessage = new JPanel();
@@ -73,8 +72,6 @@ public class GUI extends JFrame implements ActionListener {
         if (test == true)
         {
             isTest = true;
-
-
 
             closeToVictoryList.add("1");
             closeToVictoryList.add("2");
@@ -132,6 +129,11 @@ public class GUI extends JFrame implements ActionListener {
 
         newGame.addActionListener(this);
 
+        for (int i = 0; i < buttonsList.size(); i++) {
+            bricks.add(buttonsList.get(i));
+        }
+
+        /*
         bricks.add(i0);
         bricks.add(i1);
         bricks.add(i2);
@@ -148,6 +150,9 @@ public class GUI extends JFrame implements ActionListener {
         bricks.add(i13);
         bricks.add(i14);
         bricks.add(i15);
+
+         */
+
         shuffleMessage.add(newGame);
         victoryMessage.add(victoryText);
 
@@ -155,7 +160,6 @@ public class GUI extends JFrame implements ActionListener {
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-
 
     @Override
     public void actionPerformed (ActionEvent e) {
@@ -234,9 +238,21 @@ public class GUI extends JFrame implements ActionListener {
         }
 
  */
-
+        /*
         if(e.getSource() == newGame){
             placedBricks = puzzle.randomBricks();
+            setBricks(placedBricks);
+            victoryText.setText("");
+        }
+    }
+*/
+        if(e.getSource() == newGame && isTest == false){
+            placedBricks = puzzle.randomBricks();
+            setBricks(placedBricks);
+            victoryText.setText("");
+        }
+        else if (e.getSource() == newGame && isTest == true){
+            placedBricks = closeToVictoryList;
             setBricks(placedBricks);
             victoryText.setText("");
         }
