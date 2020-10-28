@@ -247,8 +247,6 @@ public class GUI extends JFrame implements ActionListener {
         else
             i6.setVisible(true);
 
-
-
         i7.setText(bricks.get(7));
         if (bricks.get(7) == "")
             i7.setVisible(false);
