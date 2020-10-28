@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        GUI g = new GUI();
+        GUI g = new GUI(); //skrivet idag.
         g.GUI(false); //skriv true om det ska vara en kvar till seger, annars false
     }
 }
