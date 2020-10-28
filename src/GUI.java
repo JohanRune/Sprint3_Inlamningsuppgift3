@@ -9,7 +9,6 @@ import javax.swing.JFrame;
 import javax.swing.*;
 import javax.swing.JPanel;
 
-//set visible false.
 /**
  * Created by Johan Rune
  * Date: 2020-10-23
