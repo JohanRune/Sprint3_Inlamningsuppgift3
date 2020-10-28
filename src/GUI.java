@@ -26,7 +26,6 @@ public class GUI extends JFrame implements ActionListener {
     List<String> placedBricks = new ArrayList<>();
     List<JButton> buttonsList = new ArrayList<>();
 
-
     JButton i0 = new JButton();
     JButton i1 = new JButton();
     JButton i2 = new JButton();
@@ -75,6 +74,8 @@ public class GUI extends JFrame implements ActionListener {
         {
             isTest = true;
 
+
+
             closeToVictoryList.add("1");
             closeToVictoryList.add("2");
             closeToVictoryList.add("3");
@@ -106,6 +107,10 @@ public class GUI extends JFrame implements ActionListener {
         bricks.setLayout(new GridLayout(4, 4));
         shuffleMessage.add(newGame);
 
+        for (int i = 0; i < buttonsList.size(); i++) {
+            buttonsList.get(i).addActionListener(this);
+        }
+        /*
         i0.addActionListener(this);
         i1.addActionListener(this);
         i2.addActionListener(this);
@@ -122,6 +127,9 @@ public class GUI extends JFrame implements ActionListener {
         i13.addActionListener(this);
         i14.addActionListener(this);
         i15.addActionListener(this);
+
+         */
+
         newGame.addActionListener(this);
 
         bricks.add(i0);
