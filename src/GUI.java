@@ -24,6 +24,8 @@ public class GUI extends JFrame implements ActionListener {
     List<String> randomBricks = puzzle.randomBricks();
     List<String> closeToVictoryList = new ArrayList<>();
     List<String> placedBricks = new ArrayList<>();
+    List<JButton> buttonsList = new ArrayList<>();
+
 
     JButton i0 = new JButton();
     JButton i1 = new JButton();
@@ -44,12 +46,30 @@ public class GUI extends JFrame implements ActionListener {
     JButton newGame = new JButton("Play!");
     JLabel victoryText = new JLabel("");
 
+
     JPanel victoryMessage = new JPanel();
     JPanel bricks = new JPanel();
     JPanel shuffleMessage = new JPanel();
 
 
     public void GUI (boolean test) {
+
+        buttonsList.add(i0);
+        buttonsList.add(i1);
+        buttonsList.add(i2);
+        buttonsList.add(i3);
+        buttonsList.add(i4);
+        buttonsList.add(i5);
+        buttonsList.add(i6);
+        buttonsList.add(i7);
+        buttonsList.add(i8);
+        buttonsList.add(i9);
+        buttonsList.add(i10);
+        buttonsList.add(i11);
+        buttonsList.add(i12);
+        buttonsList.add(i13);
+        buttonsList.add(i14);
+        buttonsList.add(i15);
 
         if (test == true)
         {
@@ -206,6 +226,16 @@ public class GUI extends JFrame implements ActionListener {
 
     public void setBricks (List<String> bricks){
 
+
+        for (int i = 0; i < bricks.size(); i++) {
+            buttonsList.get(i).setText(bricks.get(i));
+            if (bricks.get(0) == "")
+                buttonsList.get(i).setVisible(false);
+            else
+                buttonsList.get(i).setVisible(true);
+        }
+
+/*
         i0.setText(bricks.get(0));
         if (bricks.get(0) == "")
             i0.setVisible(false);
@@ -301,7 +331,7 @@ public class GUI extends JFrame implements ActionListener {
         else
             i15.setVisible(true);
 
-
+*/
 
         if (puzzle.isVictory(bricks))
             victoryText.setText("Victory Congratulations!");
