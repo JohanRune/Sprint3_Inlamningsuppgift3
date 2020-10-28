@@ -152,10 +152,13 @@ public class GUI extends JFrame implements ActionListener {
     @Override
     public void actionPerformed (ActionEvent e) {
 
-        for (int i = 0; i < buttonsList.size(); i++) {
+        for (int i = 0; i < buttonsList.size(); i++)
+            if(e.getSource() == buttonsList.get(i)){
+                placedBricks = puzzle.changePlace(placedBricks, i);
+                setBricks(placedBricks);
+            }
 
-        }
-
+/*
 
         if(e.getSource() == i0) {
             placedBricks = puzzle.changePlace(placedBricks, 0);
@@ -221,6 +224,8 @@ public class GUI extends JFrame implements ActionListener {
             placedBricks = puzzle.changePlace(placedBricks, 15);
             setBricks(placedBricks);
         }
+
+ */
 
         if(e.getSource() == newGame){
             placedBricks = puzzle.randomBricks();
