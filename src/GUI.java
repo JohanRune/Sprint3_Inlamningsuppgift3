@@ -93,7 +93,7 @@ public class GUI extends JFrame implements ActionListener {
             placedBricks = closeToVictoryList;
         }
 
-        if (isTest == false)
+        if (test == false)
             placedBricks = randomBricks;
 
         setLayout(new BorderLayout());
@@ -102,7 +102,6 @@ public class GUI extends JFrame implements ActionListener {
         add("South", shuffleMessage);
 
         bricks.setLayout(new GridLayout(4, 4));
-        shuffleMessage.add(newGame);
 
         for (int i = 0; i < buttonsList.size(); i++) {
             buttonsList.get(i).addActionListener(this);
@@ -143,18 +142,17 @@ public class GUI extends JFrame implements ActionListener {
         }
     }
 
-    public void setBricks (List<String> bricks){
+    public void setBricks (List<String> bricksList){
 
-
-        for (int i = 0; i < bricks.size(); i++) {
-            buttonsList.get(i).setText(bricks.get(i));
-            if (bricks.get(i) == "")
+        for (int i = 0; i < bricksList.size(); i++) {
+            buttonsList.get(i).setText(bricksList.get(i));
+            if (bricksList.get(i) == "")
                 buttonsList.get(i).setVisible(false);
             else
                 buttonsList.get(i).setVisible(true);
         }
 
-        if (puzzle.isVictory(bricks))
+        if (puzzle.isVictory(bricksList))
             victoryText.setText("Victory! Congratulations!");
     }
 }
